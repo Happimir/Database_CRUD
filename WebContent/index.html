@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Database Management</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="indexCss.css" type="text/css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	
+	
+		<div class="jumbotron">
+		<h1>Database Visualizer</h1>
+		<p>This project attempts to both be a supremely basic CRUD application, along
+		with being able to display relevant results for the user via premade SQL queries. </p>
+		
+		</div>
+		
+		
+		<div class="formContainer">
+			
+			<p>Display number of people born per department, by their decade of birth, and their overall average salary.</p>
+			<form class ="form-inline" action="queryOneServlet" method="get">
+				<div class="form-group">
+					<label class="control-label" for="premade1">Preset Query One</label>
+					<button type="submit" class="btn btn-default">Search!</button>
+				</div>
+			</form>
+			
+			<p></p>
+			<form class ="form-inline" >
+				<div class="form-group">
+					<label class="control-label" for="premade2">Preset Query Two</label>
+					<button type="submit" class="btn btn-default">Search!</button>
+				</div>
+			</form>
+			<p></p>
+			
+			<form class ="form-inline" >
+				<div class="form-group">
+					<label class="control-label" for="premade3">Preset Query Three</label>
+					<button type="submit" class="btn btn-default">Search!</button>
+				</div>
+			</form>
+			
+			<p></p>
+			<form class ="form-inline" >
+				<div class="form-group">
+					<label class="control-label" for="premade4">Preset Query Four</label>
+					<button type="submit" class="btn btn-default">Search!</button>
+				</div>
+			</form>
+			
+			<p></p>
+			<form class ="form-inline" >
+				<div class="form-group">
+					<label class="control-label"  for="premade5">Preset Query Five</label>
+					<button type="submit" class="btn btn-default">Search!</button>
+				</div>
+			</form>
+		</div>
+</body>
+</html>
