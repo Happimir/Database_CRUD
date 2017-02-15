@@ -28,13 +28,15 @@ public class queryOneServlet extends HttpServlet {
 	Connection conn = DbUtils.connect();
 	PreparedStatement stmt = null; 
 	
-	String query = 
-			"SELECT DISTINCT d.dept_name, count(e.emp_no), AVG(s.salary), ROUND(YEAR(e.birth_date), -1) AS birth_date" 
-			+" FROM employees e, departments d, salaries s, dept_emp de" 
-			+" WHERE de.emp_no = e.emp_no AND de.dept_no = d.dept_no" 
-				+" AND e.emp_no = s.emp_no" 
-				+" GROUP BY d.dept_name," 
-				+" ROUND(YEAR(e.birth_date), -1)";
+	String query = "SELECT d.dept_name, COUNT(e.emp_no), AVG(s.salary),"
+    				+ " ROUND(YEAR(e.birth_date), -1) AS birth_date"
+    				+ " FROM employees e"
+    				+ " JOIN salaries s ON e.emp_no = s.emp_no"
+    				+ " JOIN dept_emp de ON de.emp_no = e.emp_no"
+    				+ " JOIN departments d ON de.dept_no = d.dept_no"
+    				+ " WHERE s.from_date<='2014-01-01' AND s.to_date >'2014-01-01'"
+    				+ " AND de.from_date<='2014-01-01' AND de.to_date >'2014-01-01'"
+    				+ " GROUP BY d.dept_name, ROUND(YEAR(e.birth_date), -1)";
 	
 	private static final long serialVersionUID = 1L;
        
@@ -67,7 +69,7 @@ public class queryOneServlet extends HttpServlet {
 				
 				System.out.println(dept_name + " " + count + " " + salary + " " + birthDecade);
 			}
-			conn.close();
+			//conn.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
