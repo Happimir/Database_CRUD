@@ -24,6 +24,6 @@ public class DbAccessConfig {
 
     /** The password for the database user.
      */
-    static  String DB_CONNECTION_PWD = "Jaljap2732!";
+    static  String DB_CONNECTION_PWD = "Kishan12";
 	
 }
